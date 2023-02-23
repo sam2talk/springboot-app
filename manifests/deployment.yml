@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: sajayispringbootapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ajayispringbootapp
+  template:
+    metadata:
+      labels:
+        app: sajayispringbootapp 
+    spec:
+      containers:
+        - name: sajayispringbootapp 
+          image: myacrrepo431.azurecr.io/akannanspringbootapp
+          ports:
+          - containerPort: 80
